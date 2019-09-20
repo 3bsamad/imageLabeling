@@ -5,7 +5,7 @@ Created on Fri Sep 20 12:50:27 2019
 @author: Omar Elshenoudy
 """
 
-#a Python function to remove background. 
+#a Python function to remove the green background. 
 from PIL import Image  
 from PIL import ImageFilter 
 import os
@@ -16,12 +16,15 @@ def removeBg(img):
     pixdata = img.load()  
     for y in range(img.size[1]):  
         for x in range(img.size[0]):  
-            r, g, b, a = img.getpixel((x, y))  
-            if (r < 100) and (g >110) and (b < 170):  
+            r, g, b, a = img.getpixel((x, y)
+            # the RGB values of the background                   
+            if (r < 100) and (g >110) and (b < 170):
+                # R,G,B, alpha for transparency                      
                 pixdata[x, y] = (0, 0, 0, 1000)  
-            #Remove anti-aliasing outline of body.  
+            #Removes anti-aliasing outline of body  
             if r == 0 and g == 0 and b == 0:  
-                pixdata[x, y] = (0, 0, 0, 1000)  
+                pixdata[x, y] = (0, 0, 0, 1000)
+    # apply gaussian blur to smooth out the edges                                  
     img2 = img.filter(ImageFilter.GaussianBlur(radius=0.5))  
     return img2
 
@@ -29,9 +32,4 @@ def removeBg(img):
 
 
 
-i=1
-for filename in os.listdir("."): # parse through file list in the current directory  
-      if filename == str(i)+".png" :  
-           img = Image.open(filename)  
-           removeBg(img).save("D:/CTJ-OE/hands/trial" + str(i) + ".png") 
-      i+=1         
+      
