@@ -6,17 +6,16 @@ import os
 import cv2
 
 
-
+#Creates a new image(numpy array) filled with certain color in RGB
 def create_blank(width, height):
-    """Creates a new image(numpy array) filled with certain color in RGB"""
     # Create black blank image
     image = np.zeros((height, width, 1), np.uint8)
     # Fills image with color
     image[:] = 255 #whole array is 255
-    
-    
-
+ 
     return image
+
+
 
 #defining a method to extract the green background, given an image as input
 def removeBg(img):
@@ -77,16 +76,16 @@ for filename in os.listdir("./input"): # parse through file list in the current 
     if filename.endswith(".png"):
         img_original = cv2.imread("./input/" + filename)
         gray = cv2.cvtColor(img_original, cv2.COLOR_BGR2GRAY)
-        cv2.imwrite("D:/CTJ-OE/hands/output/original"+str(i)+".png",img_original)
-        cv2.imwrite("D:/CTJ-OE/hands/output/gray"+str(i)+".png",gray)
+        cv2.imwrite("Directory/output/original"+str(i)+".png",img_original)
+        cv2.imwrite("Directory/output/gray"+str(i)+".png",gray)
         img, mask= removeBgHSV(img_original)
-        cv2.imwrite("D:/CTJ-OE/hands/output/label"+str(i)+".png",mask)
-        cv2.imwrite("D:/CTJ-OE/hands/output/img"+str(i)+".png",img)
+        cv2.imwrite("Directory/output/label"+str(i)+".png",mask)
+        cv2.imwrite("Directory/output/img"+str(i)+".png",img)
         
         i+=1
     i+=1
    
-"""
+
 j=1 
 for filename in os.listdir("."): # parse through file list in the current directory
     if filename.endswith(".png"):
@@ -99,11 +98,11 @@ for filename in os.listdir("."): # parse through file list in the current direct
         fontScale              = 1
         fontColor              = (255,255,255)
         lineType               = 2
-        cv2.putText(img,'Hello World!', bottomLeftCornerOfText, font, fontScale,fontColor,lineType)
+        cv2.putText(img,'Hand', bottomLeftCornerOfText, font, fontScale,fontColor,lineType)
         j+=1    
     j+=1
-    cv2.imwrite("D:/CTJ-OE/hands/photo"+str(j)+".png",img) 
-"""
+    cv2.imwrite("Directory/photo"+str(j)+".png",img) 
+
 
 
        
