@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 23 14:55:45 2019
 
-@author: ctj-oe
+@author: Omar M. Abdel Samad
 """
 
 from __future__ import print_function
