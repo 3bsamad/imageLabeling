@@ -9,4 +9,7 @@ You also need the PIL (Python Image Library)
 ```pip install pillow```
 
 # Change Mask 
-This code changes the color of the mask created around the object to red by default. By Changing the RGB values, you can create a mask of any desired color. 
+The file ```changeMask.py``` changes the color of the mask created around the object to red by default. By Changing the RGB values, you can create a mask of any desired color. 
+
+# Blend Photos
+The file```blendPhotos.py``` is a simple code for the linear blending of two photos. You can use the resultant mask from ```changeMask.py``` and blend it using ```blendPhotos.py``` with the original image from which the mask was created (preferably in grayscale). This results in a file which is labelled using a light red color. 
