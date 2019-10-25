@@ -1,3 +1,6 @@
+# Image Labeling
+Labeling images for a dataset is of upmost importance in the field of machine learning. The goal here is building a dataset containing images, masks of the object to be recognised only, and a photo of both mask and original photo blended together. The motivation for this project is the [LabelMe Algorithm](https://github.com/wkentaro/labelme)
+
 # Remove Background 
 This simple code contains a Python method which, given an image as an input, extracts the background (Green Screen) and leaves the user with the foreground object, and a fully black background. 
 
