@@ -1,5 +1,5 @@
 # Image Labeling
-Labeling images for a dataset is of upmost importance in the field of machine learning. The goal here is building a dataset containing images, masks of the object to be recognised only, and a photo of both mask and original photo blended together. The motivation for this project is the [labelme Algorithm](https://github.com/wkentaro/labelme).
+Labeling images for a dataset is of utmost importance in the field of machine learning. The goal here is building a dataset containing images, masks of the object to be recognised only, and a photo of both mask and original photo blended together. The motivation for this project is the [labelme Algorithm](https://github.com/wkentaro/labelme).
 
 # Remove Background 
 This simple code ```removeBg.py``` contains a Python method which, given an image as an input, extracts the background (Green Screen) and leaves the user with the foreground object, and a fully black background. It also contains another method ```removeBgHSV```which uses the image's HSV channels to find clearer boundaries for the object to be masked. In this case the S channel defines the best bounds for the object. 
