@@ -1,3 +1,4 @@
+## applies a number of image augmentation processes to the pictures
 import imageio
 import imgaug as ia
 from imgaug.augmentables.polys import Polygon, PolygonsOnImage
