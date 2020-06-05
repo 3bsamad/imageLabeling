@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# applies image augmentation to the input pictures, only this time using sometimes, which means not every picture gets every augmentation process
 import numpy as np
 import imgaug as ia
 import imgaug.augmenters as iaa
